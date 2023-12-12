@@ -1,0 +1,77 @@
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+
+<style>
+input{
+  font-size:2em;
+  width:100;
+  height:85;
+}
+</style>
+
+<center>
+  <table border="4">
+    <tr>
+      <td colspan="1">
+        <input class="display" type="text" style="width:415px;" size="30" name="Display">
+      </td>
+    </tr>
+    <tr>
+      <td>
+        <table>
+          <tr>
+            <td><input class="calc-btn" data-role="number" type="button" value="7"></td>
+            <td><input class="calc-btn" data-role="number" type="button" value="8"></td>
+            <td><input class="calc-btn" data-role="number" type="button" value="9"></td>
+            <td><input class="calc-btn" data-role="operator" type="button" value="+"></td>
+          </tr>
+          <tr>
+            <td><input class="calc-btn" data-role="number" type="button" value="4"></td>
+            <td><input class="calc-btn" data-role="number" type="button" value="5"></td>
+            <td><input class="calc-btn" data-role="number" type="button" value="6"></td>
+            <td><input class="calc-btn" data-role="operator" type="button" value="-"></td>
+          </tr>
+          <tr>
+            <td><input class="calc-btn" data-role="number" type="button" value="1"></td>
+            <td><input class="calc-btn" data-role="number" type="button" value="2"></td>
+            <td><input class="calc-btn" data-role="number" type="button" value="3"></td>
+            <td><input class="calc-btn" data-role="operator" type="button" value="*"></td>
+          </tr>
+          <tr>
+            <td><input class="clear-btn" type="button" value="C"></td>
+            <td><input class="calc-btn" data-role="number" type="button" value="0"></td>
+            <td><input class="calculate-btn" type="button" value="="></td>
+            <td><input class="calc-btn" data-role="operator" type="button" value="/"></td>
+          </tr>
+        </table>
+      </td>
+    </tr>
+  </table>
+
+</center>
+
+
+<script type="text/javascript">
+
+$(".calc-btn").on('click',function(){
+  if($(this).attr('data-role')!='operator'){
+    $(".display").val($(".display").val()+$(this).val());
+  }
+  else{
+    if($(".display").val()!=''){
+      $(".display").val($(".display").val()+$(this).val());
+    }
+  }
+});
+
+$(".clear-btn").on('click',function(){
+  $(".display").val('');
+});
+
+
+$(".calculate-btn").on('click',function(){
+  var expression = $(".display").val();
+  $(".display").val(eval(expression));
+});
+
+</script>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=<device-width>, initial-scale=1.0">
+    <style>
+        body {
+            background-image: url('p5.jpg');
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+        }
+
+        th {
+            background-color: #ff0000;
+            color: white;
+        }
+
+        tr:hover {
+            background-color: coral;
+        }
+
+        th,
+        td {
+            text-align: left;
+            padding: 10px;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+    <center>
+        <br><br>
+        <h1>Squares and Cubes of 1 to 10</h1>
+        <table border="1">
+            <tr>
+                <th>Number</th>
+                <th>Square</th>
+                <th>Cube</th>
+            </tr>
+            <script>
+                for (var i = 0; i <= 10; i++) {
+                    document.write("<tr><td>" + i + "</td><td>" + i * i + "</td><td>" + i * i * i + "</td></tr>");
+                }
+            </script>
+        </table>
+    </center>
+</body>
+
+</html>

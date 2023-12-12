@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<body>
+    <h2>Find Vowels and Reverse Number</h2>
+    <input type="text" id="inputString" placeholder="Enter a string"><br>
+    <input type="number" id="inputNumber" placeholder="Enter a number"><br>
+    <button onclick="findFirstVowelAndReverse()">Submit</button>
+    <script>
+        function findFirstVowelAndReverse() {
+            let inputString = document.getElementById("inputString").value;
+            let inputNumber = document.getElementById("inputNumber").value;
+            // Find the occurrence and position of the first vowel in the string
+            let firstVowelPosition = -1;
+            let vowels = "AEIOUaeiou";
+            for (let i = 0; i < inputString.length; i++) {
+                if (inputString.charAt(i) == 'a' || inputString.charAt(i) == 'e' || inputString.charAt(i) == 'i'
+
+                    || inputString.charAt(i) == 'o' || inputString.charAt(i) == 'u' || inputString.charAt(i) == 'A' ||
+
+                    inputString.charAt(i) == 'E' || inputString.charAt(i) == 'I' || inputString.charAt(i) == 'O' || inputString.charAt(i) == 'U') {
+
+                    firstVowelPosition = i + 1;
+                    break;
+                }
+            }
+            // Find the reverse of the input number
+            let reverseNumber = parseInt(inputNumber.toString().split("").reverse().join(""));
+
+            // Output the results
+            if (firstVowelPosition !== -1) {
+                alert("First vowel position: " + firstVowelPosition);
+            } else {
+                alert("No vowels found in the string");
+            }
+            alert("Reverse of the input number: " + reverseNumber);
+        }
+    </script>
+</body>
+
+</html>
